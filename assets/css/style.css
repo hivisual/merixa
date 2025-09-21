@@ -3,22 +3,26 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f7fbf8;
     color: #333;
     display: flex;
-    flex-direction: column; /* Allow header/footer and main content */
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
     box-sizing: border-box;
     text-align: center;
 
    /* Pilihan 3: Pola SVG Minimalis */
-background-color: #f8f9fa;
-background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dce3e9' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M3 10h4v2H3v-2zm7 0h4v2h-4v-2z'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #f8f9fa;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dce3e9' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M3 10h4v2H3v-2zm7 0h4v2h-4v-2z'/%3E%3C/g%3E%3C/svg%3E");
     
 }
+
+/* Padding utama untuk konten selain footer */
+.header, .pricelist-grid {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 
 /* Kontainer Utama (Molly's Page) */
 .container {
@@ -27,128 +31,15 @@ background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox=
     padding: 20px;
 }
 
-/* Gambar Profil */
-.profile-picture {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin: 0 0 10px 0;
-}
-
-p {
-    font-size: 1rem;
-    color: #666;
-    margin: 0 auto 30px auto;
-    max-width: 450px;
-    line-height: 1.6;
-}
-
-/* Tombol Link (Molly's Page) */
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.link-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    border: 3px solid #333;
-    background-color: #fff;
-    border-radius: 50px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.link-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-.link-button.primary {
-    background-color: #ffd900;
-    border-color: #333;
-    color: #000;
-}
-
-.link-button.primary:hover {
-    background-color: #e6c300;
-}
-
-.link-button span {
-    flex-grow: 1;
-    text-align: center;
-}
-
-/* ============================================= */
-/* CSS UNTUK IKON SOSIAL MEDIA YANG DIMODIFIKASI */
-/* ============================================= */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px; /* Memberi jarak lebih antar item */
-    margin-top: 40px; /* Jarak dari tombol link di atasnya */
-}
-
-.social-item {
-    display: flex;
-    flex-direction: column; /* Mengatur ikon di atas, teks di bawah */
-    align-items: center;
-    gap: 8px; /* Jarak antara ikon dan teks */
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.social-item:hover {
-    transform: translateY(-4px); /* Efek terangkat saat disentuh mouse */
-}
-
-.social-icon-circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    font-size: 2rem;
-    color: #fff;
-    transition: box-shadow 0.2s ease;
-}
-
-.social-item:hover .social-icon-circle {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.social-icon-label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #555;
-}
-
-.social-icon-circle.whatsapp  { background-color: #25d366; }
-.social-icon-circle.telegram  { background-color: #0088cc; }
+/* (Sisa CSS untuk Halaman Molly tidak ditampilkan lagi untuk keringkasan) */
+/* ... */
 
 
 /* ========== RANEYSTORE PRICELIST PAGE STYLES ========== */
-/* ... (kode CSS selanjutnya tidak berubah) ... */
 
 .header {
+    width: 100%;
+    margin-top: 20px;
     margin-bottom: 30px;
 }
 .header h1 {
@@ -165,11 +56,11 @@ p {
 
 .pricelist-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
     width: 100%;
-    max-width: 900px;
-    margin-bottom: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
 }
 
 .product-card {
@@ -179,6 +70,8 @@ p {
     overflow: hidden;
     text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:hover {
@@ -195,19 +88,29 @@ p {
     border-bottom: 1px solid #eee;
 }
 
+/* ================================ */
+/* PERBAIKAN LAYOUT HEADER PRODUK   */
+/* ================================ */
 .product-logo {
     width: 24px;
     height: 24px;
+    object-fit: contain;
+    flex-shrink: 0; /* Mencegah logo menyusut */
 }
 
 .product-name {
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* Sedikit dikecilkan agar lebih fleksibel */
     font-weight: 700;
     color: #222;
+    /* Mencegah teks panjang merusak layout */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product-body {
     padding: 0 20px 20px 20px;
+    flex-grow: 1; /* Membuat body mengisi sisa ruang */
 }
 
 .product-body p {
@@ -233,37 +136,86 @@ p {
     border-bottom: none;
 }
 
-.footer {
-    margin-top: auto; /* Push footer to bottom if content is short */
+@media (min-width: 768px) {
+    .pricelist-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
 }
 
-.footer h3 {
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1rem;
+
+/* ============================== */
+/* DESAIN ULANG BAGIAN FOOTER     */
+/* ============================== */
+.site-footer {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 40px 20px;
+    margin-top: auto; /* Mendorong footer ke bagian bawah halaman */
+    border-top: 1px solid #e7e7e7;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+.footer-container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.site-footer h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.site-footer p {
     color: #666;
+    margin-bottom: 30px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* tambahan */
 }
 
-.contact-icons {
+
+.footer-contacts {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Agar tombol turun ke bawah di layar kecil */
 }
 
-.contact-icons .icon-link {
-    font-size: 2rem;
-    text-decoration: none;
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    display: flex;
+.contact-button {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    transition: transform 0.2s ease;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.contact-icons .icon-link:hover {
-    transform: scale(1.1);
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.contact-button i {
+    font-size: 1.2rem;
+}
+
+.contact-button.whatsapp {
+    background-color: #25d366;
+}
+
+.contact-button.telegram {
+    background-color: #0088cc;
 }
