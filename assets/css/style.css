@@ -107,7 +107,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 25px;
-    margin-top: 40px;
+    margin-bottom: 35px; /* DIUBAH: Memberi jarak ke tombol links di bawahnya */
 }
 
 .social-item {
@@ -209,15 +209,11 @@ p {
     flex-shrink: 0;
 }
 
-/* ========================================= */
-/* PERUBAHAN JUDUL PRODUK ADA DI SINI        */
-/* ========================================= */
 .product-name {
-    font-size: 1.1rem; /* Ukuran font dikecilkan sedikit */
+    font-size: 1.1rem;
     font-weight: 700;
     color: #222;
-    line-height: 1.4; /* Menambah spasi antar baris jika judulnya wrap */
-    /* Properti white-space, overflow, dan text-overflow dihapus agar teks bisa wrap */
+    line-height: 1.4;
 }
 
 .product-body {
