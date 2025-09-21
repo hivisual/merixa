@@ -209,13 +209,15 @@ p {
     flex-shrink: 0;
 }
 
+/* ========================================= */
+/* PERUBAHAN JUDUL PRODUK ADA DI SINI        */
+/* ========================================= */
 .product-name {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Ukuran font dikecilkan sedikit */
     font-weight: 700;
     color: #222;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.4; /* Menambah spasi antar baris jika judulnya wrap */
+    /* Properti white-space, overflow, dan text-overflow dihapus agar teks bisa wrap */
 }
 
 .product-body {
