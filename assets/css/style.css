@@ -1,169 +1,257 @@
-/* ========= GLOBAL / DASAR ========= */
+/* File: assets/css/style.css */
+
+/* ========== GENERAL STYLES & MOLLY'S PAGE ========== */
+
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  padding: 20px;
-  min-height: 100vh;
-  box-sizing: border-box;
-  background-color: #f7fbf8;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7fbf8;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Allow header/footer and main content */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+
+    /* Pola garis diagonal di latar belakang */
+    background-image:    
+        repeating-linear-gradient(45deg, #e9f0ec 0, #e9f0ec 10px, transparent 10px, transparent 20px),
+        repeating-linear-gradient(-45deg, #e9f0ec 0, #e9f0ec 10px, transparent 10px, transparent 20px);
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
 }
 
-/* Background pattern khusus untuk homepage */
-body:has(.container) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image:  
-    repeating-linear-gradient(45deg, #e9f0ec 0, #e9f0ec 10px, transparent 10px, transparent 20px),
-    repeating-linear-gradient(-45deg, #e9f0ec 0, #e9f0ec 10px, transparent 10px, transparent 20px);
-  background-position: top left, bottom right;
-  background-repeat: no-repeat;
-  background-size: 150px 150px;
-}
-
-/* ========= HOMEPAGE ========= */
+/* Kontainer Utama (Molly's Page) */
 .container {
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
 }
 
+/* Gambar Profil */
 .profile-picture {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin: 0 0 10px 0;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
 }
 
 p {
-  font-size: 1rem;
-  color: #666;
-  margin: 0 auto 30px auto;
-  max-width: 450px;
-  line-height: 1.6;
+    font-size: 1rem;
+    color: #666;
+    margin: 0 auto 30px auto;
+    max-width: 450px;
+    line-height: 1.6;
 }
 
+/* Ikon Sosial Media (Molly's Page) */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.social-icons .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-icons .icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.icon.whatsapp  { background-color: #25d366; }
+.icon.telegram  { background-color: #0088cc; }
+.icon.tiktok    { background-color: #000000; }
+.icon.instagram { background-color: #e4405f; }
+
+
+/* Tombol Link (Molly's Page) */
 .links {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .link-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 25px;
-  border: 3px solid #333;
-  background-color: #fff;
-  border-radius: 50px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-.link-button:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
-.link-button.primary { background-color: #ffd900; border-color: #333; color: #000; }
-.link-button.primary:hover { background-color: #e6c300; }
-.link-button span { flex-grow: 1; text-align: center; }
-
-/* social icons */
-.social-icons { display: flex; justify-content: center; gap: 25px; margin-top: 20px; flex-wrap: wrap; }
-.social-icons .icon { display: flex; flex-direction: column; align-items: center; text-decoration: none; width: 80px; color: inherit; }
-.social-icons .icon i { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #fff; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.social-icons .icon .label { margin-top: 8px; font-size: 0.85rem; font-weight: 500; color: #333; text-transform: capitalize; }
-.social-icons .icon:hover i { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-
-/* brand colors */
-.icon.whatsapp i { background-color: #25d366; }
-.icon.telegram i { background-color: #0088cc; }
-.icon.tiktok i   { background-color: #000000; }
-.icon.instagram i{ background-color: #e4405f; }
-
-/* ========= PRICELIST PAGE ========= */
-.simple-nav {
-  max-width: 960px;
-  margin: 0 auto 30px auto;
-}
-.simple-nav a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #333;
-}
-.simple-nav a:hover {
-  text-decoration: underline;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border: 3px solid #333;
+    background-color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.header { text-align: center; margin-bottom: 30px; }
-.header h1 { font-size: 2.5rem; font-weight: 700; color: #333; margin: 0; }
-.header p { font-size: 1.1rem; color: #6c757d; margin-top: 5px; }
+.link-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.link-button.primary {
+    background-color: #ffd900;
+    border-color: #333;
+    color: #000;
+}
+
+.link-button.primary:hover {
+    background-color: #e6c300;
+}
+
+.link-button span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+/* ========== RANEYSTORE PRICELIST PAGE STYLES ========== */
+
+.header {
+    margin-bottom: 30px;
+}
+.header h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+.header p {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    margin-top: -10px;
+}
 
 .pricelist-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 960px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 40px;
 }
 
 .product-card {
-  background-color: #fff;
-  border: 2px solid #ddd;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
 
 .product-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 15px;
-  background-color: #fafafa;
-  border-bottom: 2px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
 }
-.product-logo { width: 24px; height: 24px; margin-right: 12px; }
-.product-name { font-weight: 700; font-size: 1.2rem; }
 
-.product-body { padding: 15px 20px; }
-.product-body p { font-weight: 700; margin: 15px 0 5px 0; text-decoration: underline; text-align: left; }
-.product-body p:first-child { margin-top: 0; }
-.product-body ul { list-style-type: none; padding-left: 0; margin: 0; }
-.product-body li { font-size: 0.95rem; padding: 3px 0; color: #555; text-align: left; }
+.product-logo {
+    width: 24px;
+    height: 24px;
+}
 
-/* footer */
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.product-body {
+    padding: 0 20px 20px 20px;
+}
+
+.product-body p {
+    font-weight: 700;
+    color: #333;
+    margin: 20px 0 10px 0;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.product-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-body li {
+    padding: 8px 0;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+}
+.product-body li:last-child {
+    border-bottom: none;
+}
+
 .footer {
-  text-align: center;
-  margin-top: 40px;
-  border: 2px solid #ddd;
-  border-radius: 15px;
-  padding: 20px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-top: auto; /* Push footer to bottom if content is short */
 }
-.footer h3 { margin: 0 0 15px 0; font-size: 1.1rem; color: #666; font-weight: 500; }
-.contact-icons { display: flex; justify-content: center; gap: 25px; }
-.icon-link { display: flex; justify-content: center; align-items: center; font-size: 2.5rem; text-decoration: none; transition: transform 0.2s ease; }
-.icon-link:hover { transform: scale(1.1); }
-.whatsapp { color: #25D366; }
-.telegram { color: #0088cc; }
+
+.footer h3 {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-icons .icon-link {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.contact-icons .icon-link:hover {
+    transform: scale(1.1);
+}
