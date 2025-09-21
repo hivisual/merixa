@@ -1,4 +1,4 @@
-/* ========== GENERAL STYLES & MOLLY'S PAGE ========== */
+/* ========== GENERAL STYLES & HOMEPAGE ========== */
 
 body {
     margin: 0;
@@ -10,32 +10,146 @@ body {
     min-height: 100vh;
     box-sizing: border-box;
     text-align: center;
-
-   /* Pilihan 3: Pola SVG Minimalis */
     background-color: #f8f9fa;
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dce3e9' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M3 10h4v2H3v-2zm7 0h4v2h-4v-2z'/%3E%3C/g%3E%3C/svg%3E");
-    
 }
 
-/* Padding utama untuk konten selain footer */
+/* Padding utama untuk konten selain footer di halaman pricelist */
 .header, .pricelist-grid {
     padding-left: 20px;
     padding-right: 20px;
 }
 
-
-/* Kontainer Utama (Molly's Page) */
+/* Kontainer Utama (Homepage) */
 .container {
     max-width: 600px;
     width: 100%;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 }
 
-/* (Sisa CSS untuk Halaman Molly tidak ditampilkan lagi untuk keringkasan) */
-/* ... */
+/* Gambar Profil (Homepage) */
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 auto 30px auto;
+    max-width: 450px;
+    line-height: 1.6;
+}
+
+/* Tombol Link (Homepage) */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.link-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border: 3px solid #333;
+    background-color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.link-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.link-button.primary {
+    background-color: #ffd900;
+    border-color: #333;
+    color: #000;
+}
+
+.link-button.primary:hover {
+    background-color: #e6c300;
+}
+
+.link-button span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Ikon Sosial Media (Homepage) */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.social-item:hover {
+    transform: translateY(-4px);
+}
+
+.social-icon-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #fff;
+    transition: box-shadow 0.2s ease;
+}
+
+.social-item:hover .social-icon-circle {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.social-icon-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.social-icon-circle.whatsapp { background-color: #25d366; }
+.social-icon-circle.telegram { background-color: #0088cc; }
 
 
-/* ========== RANEYSTORE PRICELIST PAGE STYLES ========== */
+/* ========== PRICELIST PAGE STYLES ========== */
 
 .header {
     width: 100%;
@@ -88,21 +202,17 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-/* ================================ */
-/* PERBAIKAN LAYOUT HEADER PRODUK   */
-/* ================================ */
 .product-logo {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    flex-shrink: 0; /* Mencegah logo menyusut */
+    flex-shrink: 0;
 }
 
 .product-name {
-    font-size: 1.2rem; /* Sedikit dikecilkan agar lebih fleksibel */
+    font-size: 1.2rem;
     font-weight: 700;
     color: #222;
-    /* Mencegah teks panjang merusak layout */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -110,7 +220,7 @@ body {
 
 .product-body {
     padding: 0 20px 20px 20px;
-    flex-grow: 1; /* Membuat body mengisi sisa ruang */
+    flex-grow: 1;
 }
 
 .product-body p {
@@ -143,15 +253,12 @@ body {
     }
 }
 
-
-/* ============================== */
-/* DESAIN ULANG BAGIAN FOOTER     */
-/* ============================== */
+/* Footer Styles */
 .site-footer {
     background-color: #ffffff;
     width: 100%;
     padding: 40px 20px;
-    margin-top: auto; /* Mendorong footer ke bagian bawah halaman */
+    margin-top: auto;
     border-top: 1px solid #e7e7e7;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
 }
@@ -176,15 +283,13 @@ body {
     max-width: 450px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center; /* tambahan */
 }
-
 
 .footer-contacts {
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap; /* Agar tombol turun ke bawah di layar kecil */
+    flex-wrap: wrap;
 }
 
 .contact-button {
